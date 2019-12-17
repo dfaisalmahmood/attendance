@@ -1,0 +1,15 @@
+language: python
+
+python:
+  - "3.7.4"
+
+env:
+  - DJANGO_SETTINGS_MODULE = "attendance.settings.development"
+
+install:
+  - pip install -r requirements.txt
+
+script:
+  - python manage.py makemigrations
+  - python manage.py migrate
+  - python manage.py test
